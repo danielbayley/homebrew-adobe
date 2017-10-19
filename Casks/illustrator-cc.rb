@@ -1,6 +1,6 @@
-cask 'adobe-photoshop-cc' do
-  version '16'
-  sha256 'c5a30a102299215b7df7e0cc519d3d63c20a63b0fecf54bc41eb68061c96dec7'
+cask 'illustrator-cc' do
+  version '19'
+  sha256 'ca3e059b130e0b9a6c56ae55b89fa4d490650e25a9371072f43285c10c9821d2'
 
   language('cs')                { 'cs_CZ' }
   language('da')                { 'da_DK' }
@@ -30,41 +30,30 @@ cask 'adobe-photoshop-cc' do
   language('zh-TW')             { 'zh_TW' }
   language('zh')                { 'zh_CN' }
 
-  url "http://trials3.adobe.com/AdobeProducts/PHSP/#{version}/osx10/Photoshop_#{version.major}_LS20.dmg",
+  url "http://trials3.adobe.com/AdobeProducts/ILST/#{version}/osx10-64/Illustrator_#{version.major}_LS20.dmg",
       user_agent: :fake,
       cookies:    { 'MM_TRIALS' => '1234' }
-  name 'Adobe Photoshop CC'
-  homepage 'https://www.adobe.com/products/photoshop.html'
+  name 'Adobe Illustrator CC'
+  homepage 'https://www.adobe.com/products/illustrator.html'
 
   preflight do
-    system_command "#{staged_path}/Adobe Photoshop CC 2015/Install.app/Contents/MacOS/Install",
+    deployment_xml = "#{staged_path}/Adobe Illustrator CC 2015/Deployment/deployment.xml"
+
+    IO.write deployment_xml, IO.read(deployment_xml).sub(%r{>en_US<}, ">#{language}<")
+
+    system_command "#{staged_path}/Adobe Illustrator CC 2015/Install.app/Contents/MacOS/Install",
                    args: [
                            '--mode=silent',
-                           "--deploymentFile=#{staged_path}/Adobe Photoshop CC 2015/Deployment/#{language}_Deployment.xml",
+                           "--deploymentFile=#{deployment_xml}",
                          ],
                    sudo: true
   end
 
   uninstall_preflight do
-    IO.write "#{staged_path}/uninstall.xml", <<-EOS.undent
-      <?xml version="1.0" encoding="utf-8"?>
-      <Deployment>
-        <Properties>
-          <Property name="removeUserPrefs">0</Property>
-          <Property name="mediaSignature">{2614BC86-757D-4293-9E25-E4E16F370A9E}</Property>
-        </Properties>
-        <Payloads>
-          <Payload adobeCode="{2614BC86-757D-4293-9E25-E4E16F370A9E}">
-            <Action>remove</Action>
-          </Payload>
-        </Payloads>
-      </Deployment>
-    EOS
-
-    system_command "#{staged_path}/Adobe Photoshop CC 2015/Install.app/Contents/MacOS/Install",
+    system_command "#{staged_path}/Adobe Illustrator CC 2015/Install.app/Contents/MacOS/Install",
                    args: [
                            '--mode=silent',
-                           "--deploymentFile=#{staged_path}/uninstall.xml",
+                           "--deploymentFile=#{staged_path}/Adobe Illustrator CC 2015/Deployment/uninstall.xml",
                          ],
                    sudo: true
   end

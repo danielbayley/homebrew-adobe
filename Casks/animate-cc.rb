@@ -1,4 +1,4 @@
-cask 'adobe-animate-cc' do
+cask 'animate-cc' do
   version '15.1'
   sha256 'c4a0affca7c37884471b495a0c242ddb110c8591bc41da91ecab81d12da60590'
 

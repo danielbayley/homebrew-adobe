@@ -1,4 +1,4 @@
-cask 'adobe-media-encoder-cc' do
+cask 'media-encoder-cc' do
   version '9'
   sha256 'bb074010df2a65cf519b443e1bd86f69581196673ca9468ade6d36555b5b26e7'
 

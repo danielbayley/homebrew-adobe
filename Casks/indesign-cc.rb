@@ -1,4 +1,4 @@
-cask 'adobe-indesign-cc' do
+cask 'indesign-cc' do
   version '11'
   sha256 '1387e8180cbe61ecff2146df25c2d71dd68fa59e8828928464d20db188b3cd52'
 
