@@ -1,13 +1,19 @@
 #! /bin/bash
+set -e
 
-git diff --cached --name-only --diff-filter=ACM | grep .rb$ |
-while read rb
+if ${CI-false}
+then ls */*.rb
+else git diff --cached --name-only --diff-filter=ACM | grep .rb$
+fi | while read rb
 do case $rb in
   Formula*)
-    brew audit --strict --online $rb &&
+    brew audit --strict --online $rb
+    brew install $rb
     brew test $rb;;
   Cask*)
-    brew cask audit $rb && #--download
-    brew cask style $rb;; #--fix
+    brew cask style $rb
+    unset download
+    [[ $rb != *-cc* ]] && download=${CI+download}
+    brew cask audit $rb --$download;;
 esac
 done

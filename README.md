@@ -1,3 +1,5 @@
+[![badge][ci]][circle]
+
 _[Homebrew]_ Adobe
 ==================
 Homebrew [_Cask_]s and [formula]e for [Adobe] apps, and even [plugins]!
@@ -20,6 +22,9 @@ License
 
 [MIT]:              LICENSE.md
 [Daniel Bayley]:    https://github.com/danielbayley
+
+[ci]:               https://img.shields.io/circleci/project/danielbayley/homebrew-adobe.svg?style=flat-square
+[circle]:           https://circleci.com/gh/danielbayley/homebrew-adobe
 
 [adobe]:            https://adobe.com
 [plugins]:          https://exchange.adobe.com/addons
