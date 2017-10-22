@@ -1,9 +1,9 @@
 class Exmancmd < Formula
   desc "Install add-ons and extensions for Adobe apps"
-  homepage "https://helpx.adobe.com/creative-cloud/kb/installingextensionsandaddons.html"
-  url "https://www.adobeexchange.com/ExManCmd_mac.zip"
-  version "7.3.3.481"
-  sha256 "9ed5b6dc8c48a1f76fbab87f53aa87e85b5b718f44fa6ce46be12cc3f5880475"
+  homepage "https://www.adobeexchange.com/resources/28"
+  url "https://www.adobe.com/go/ExManCmdMac"
+  version "7.3.4.597"
+  sha256 "4a8d0740ba49365391ed7e31ccf6dee9d918b99e86720cf74770f93cd2b094ac"
 
   bottle :unneeded
 
