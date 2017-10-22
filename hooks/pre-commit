@@ -1,7 +1,9 @@
-#! /bin/bash
+#! /bin/zsh -f
 set -e
 
-if ${CI-false}
+if (($#))
+then ls {*/,}$@:t:r.rb(N)
+elif ${CI-false}
 then ls */*.rb
 else git diff --cached --name-only --diff-filter=ACM | grep .rb$
 fi | while read rb
