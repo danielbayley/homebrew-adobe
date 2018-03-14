@@ -1,11 +1,9 @@
 cask 'lottie' do
-  version '5.1.7'
-  sha256 '5f4250511ce51085a070d2a441bd3b14bfd2a4ffcf839d36b22c9be4abe53736'
+  version '5.1.8'
+  sha256 '48a415c8e4ed0fb8d0d511220ac07ff4108c801f2fe14d4817fd09aa89e7f30a'
 
   # github.com/airbnb/lottie-web was verified as official when first introduced to the cask
   url "https://github.com/airbnb/lottie-web/archive/v#{version}.zip"
-  appcast 'https://github.com/airbnb/lottie-web/releases.atom',
-          checkpoint: '86cd017974acfdbfd96bfd12ded367eeedaf81a52c5ab66fc33ab6a2ece79fdd'
   name 'Lottie'
   homepage 'http://airbnb.io/lottie'
 
