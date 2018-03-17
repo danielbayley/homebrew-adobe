@@ -39,7 +39,7 @@ cask 'media-encoder-cc' do
   media_signature = '0FAC7130-BEC5-47A5-8813-1D339B8326ED'
 
   preflight do
-    IO.write "#{staged_path}/install.xml", <<-EOS.undent
+    IO.write "#{staged_path}/install.xml", <<~EOS
       <?xml version="1.0" encoding="utf-8"?>
       <Deployment>
         <Properties>
@@ -63,7 +63,7 @@ cask 'media-encoder-cc' do
   end
 
   uninstall_preflight do
-    IO.write "#{staged_path}/uninstall.xml", <<-EOS.undent
+    IO.write "#{staged_path}/uninstall.xml", <<~EOS
       <?xml version="1.0" encoding="utf-8"?>
       <Deployment>
         <Properties>

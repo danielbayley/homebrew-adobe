@@ -28,7 +28,7 @@ cask 'premiere-pro-cc' do
   media_signature = '38C72D42-0672-43B1-9E05-E7631684F9A1'
 
   preflight do
-    IO.write "#{staged_path}/install.xml", <<-EOS.undent
+    IO.write "#{staged_path}/install.xml", <<~EOS
       <?xml version="1.0" encoding="utf-8"?>
       <Deployment>
         <Properties>
@@ -52,7 +52,7 @@ cask 'premiere-pro-cc' do
   end
 
   uninstall_preflight do
-    IO.write "#{staged_path}/uninstall.xml", <<-EOS.undent
+    IO.write "#{staged_path}/uninstall.xml", <<~EOS
       <?xml version="1.0" encoding="utf-8"?>
       <Deployment>
         <Properties>

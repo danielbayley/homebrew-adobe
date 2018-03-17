@@ -28,7 +28,7 @@ cask 'after-effects-cc' do
   media_signature = '147EC100-14BE-45EF-AB42-35BAEE7D02F0'
 
   preflight do
-    IO.write "#{staged_path}/install.xml", <<-EOS.undent
+    IO.write "#{staged_path}/install.xml", <<~EOS
       <?xml version="1.0" encoding="utf-8"?>
       <Deployment>
         <Properties>
@@ -52,7 +52,7 @@ cask 'after-effects-cc' do
   end
 
   uninstall_preflight do
-    IO.write "#{staged_path}/uninstall.xml", <<-EOS.undent
+    IO.write "#{staged_path}/uninstall.xml", <<~EOS
       <?xml version="1.0" encoding="utf-8"?>
       <Deployment>
         <Properties>
