@@ -7,24 +7,15 @@ cask 'buttcapper' do
   name 'ButtCapper'
   homepage 'http://battleaxe.co/buttcapper'
 
-  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects *'
+  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts'
   latest = Dir[folder].sort { |min, max| min <=> max }[-1]
 
-  scripts = "#{latest}/Scripts/"
-  panels = "#{scripts}ScriptUI Panels/"
+  plugin = 'ScriptUI Panels/ButtCapper.jsxbin'
 
-  plugin = 'ButtCapper.jsxbin'
-  headless = 'ButtCapper_Headless'
+  artifact "ButtCapper_v#{version}/#{plugin}", target: "#{latest}/#{plugin}"
+  artifact "ButtCapper_v#{version}/Headless", target: "#{latest}/ButtCapper_Headless"
 
-  artifact "ButtCapper_v#{version}/ScriptUI Panels/#{plugin}", target: panels + plugin
-  artifact "ButtCapper_v#{version}/Headless", target: scripts + headless
-
-  uninstall delete: [
-                      panels + plugin,
-                      scripts + headless,
-                      "~/Library/Preferences/Adobe/After Effects/*/ScriptUI Panels/#{plugin}",
-                      '~/Library/Application Support/BattleAxe/undefined',
-                    ],
+  uninstall delete: '~/Library/Application Support/BattleAxe/undefined',
             rmdir:  '~/Library/Application Support/BattleAxe'
 
   caveats do

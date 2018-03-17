@@ -11,7 +11,7 @@ cask 'ae-flow' do
   depends_on formula: 'exmancmd'
 
   postflight do
-    zxp = Dir["#{staged_path}/flow-v*/Flow v* (CC2015.2+)/Flow.zxp"][0]
+    zxp = Dir["#{staged_path}/flow-v*/Flow v*/Flow.zxp"][-1]
     system_command "#{HOMEBREW_PREFIX}/bin/exmancmd", args: ['--install', zxp]
   end
 

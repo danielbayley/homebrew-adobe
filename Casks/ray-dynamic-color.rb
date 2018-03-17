@@ -6,15 +6,16 @@ cask 'ray-dynamic-color' do
   url 'https://aescripts.com/downloadable/download/sample/sample_id/450',
       user_agent: :fake
   name 'Ray Dynamic Color'
-  homepage 'http://georegulus.com/'
+  homepage 'https://georegulus.com/tools'
 
-  subfolder = 'Scripts/ScriptUI Panels'
-  folder = "/Applications/Adobe Creative Cloud/Adobe After Effects */#{subfolder}/"
+  auto_updates true
+
+  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels/'
+  latest = Dir[folder].sort { |min, max| min <=> max }[-1]
+
   plugin = 'Ray Dynamic Color.jsxbin'
-
   postflight do
-    FileUtils.mv Dir["#{staged_path}/Ray Dynamic Color_v*/#{plugin}"][0],
-                 Dir[folder].sort { |min, max| min <=> max }[-1] + plugin
+    FileUtils.mv Dir["#{staged_path}/Ray Dynamic Color_v*/#{plugin}"][0], latest + plugin
   end
 
   uninstall delete: [

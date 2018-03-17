@@ -7,17 +7,13 @@ cask 'ouroboros' do
   name 'Ouroboros'
   homepage 'http://georegulus.com/'
 
-  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels/'
-  plugin = 'Ouroboros.jsxbin'
-
+  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'
   latest = Dir[folder].sort { |min, max| min <=> max }[-1]
 
+  plugin = 'Ouroboros.jsxbin'
   artifact plugin, target: "#{latest}/#{plugin}"
 
-  uninstall delete: [
-                      folder + plugin,
-                      '~/Library/Application Support/Ouroboros',
-                    ]
+  uninstall delete: '~/Library/Application Support/Ouroboros'
 
   caveats do
     free_license "https://aescripts.com/ouroboros-#{version.major}"

@@ -9,8 +9,8 @@ cask 'gradient-hose' do
   depends_on cask: 'rubberhose'
 
   folder = '~/Library/Application Support/BattleAxe/RubberHose */Styles/'
-  preset = 'Gradient Hose.ffx'
 
+  preset = 'Gradient Hose.ffx'
   artifact preset, target: "#{Dir[File.expand_path folder][0]}/#{preset}"
 
   uninstall delete: folder + preset,

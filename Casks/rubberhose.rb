@@ -7,19 +7,11 @@ cask 'rubberhose' do
   name 'RubberHose'
   homepage 'http://battleaxe.co/rubberhose'
 
-  subfolder = 'Scripts/ScriptUI Panels'
-  folder = "/Applications/Adobe Creative Cloud/Adobe After Effects */#{subfolder}/"
-  plugin = 'RubberHose.jsxbin'
-
+  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'
   latest = Dir[folder].sort { |min, max| min <=> max }[-1]
 
   artifact "RubberHose#{version}/RubberHose#{version.major}.jsxbin",
-           target: "#{latest}/#{plugin}"
-
-  uninstall delete: [
-                      folder + plugin,
-                      "~/Library/Preferences/Adobe/After Effects/*/#{subfolder}/#{plugin}",
-                    ]
+           target: "#{latest}/RubberHose.jsxbin"
 
   zap trash: "~/Library/Application Support/BattleAxe/RubberHose #{version.major}",
       rmdir: '~/Library/Application Support/BattleAxe'

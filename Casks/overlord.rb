@@ -7,7 +7,7 @@ cask 'overlord' do
   name 'Overlord'
   homepage 'http://battleaxe.co/overlord'
 
-  # auto_updates true
+  auto_updates true
   depends_on formula: 'exmancmd'
 
   installer script: {
