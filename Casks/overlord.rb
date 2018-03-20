@@ -1,13 +1,13 @@
 cask 'overlord' do
-  version '1.10'
-  sha256 'c1e9e44496f46203c4c6b8749e258bcc003e989b733eea3e506bc13674b0c974'
+  version '1.12'
+  sha256 'a39a5e333f1aa334f2080bab388ef138d879a7addab4de3952b2784af1bf4512'
 
   # dropbox.com/s was verified as official when first introduced to the cask
   url "https://dropbox.com/s/#{ENV['HOMEBREW_ADOBE_OVERLORD']}/Overlord-#{version}.zip?dl=1"
   name 'Overlord'
   homepage 'http://battleaxe.co/overlord'
 
-  auto_updates true
+  # auto_updates true
   depends_on formula: 'exmancmd'
 
   installer script: {
