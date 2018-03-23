@@ -1,6 +1,6 @@
 cask 'lottie' do
-  version '5.1.8'
-  sha256 '48a415c8e4ed0fb8d0d511220ac07ff4108c801f2fe14d4817fd09aa89e7f30a'
+  version '5.1.9'
+  sha256 '00a15f3520780b18f9a1f0d45660729d70799d247e9c8fec25cdf711def88282'
 
   # github.com/airbnb/lottie-web was verified as official when first introduced to the cask
   url "https://github.com/airbnb/lottie-web/archive/v#{version}.zip"
