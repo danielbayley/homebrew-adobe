@@ -8,11 +8,10 @@ cask 'hose-maker' do
 
   depends_on cask: 'rubberhose'
 
-  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/'
-  latest = Dir[folder].sort { |min, max| min <=> max }[-1]
+  folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts'].max
 
   script = 'Hose Maker.jsx'
-  artifact script, target: "#{latest}/#{script}"
+  artifact script, target: "#{folder}/#{script}"
 
-  uninstall delete: folder + script
+  uninstall delete: "#{folder}/#{script}"
 end

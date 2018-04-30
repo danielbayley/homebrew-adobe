@@ -7,16 +7,15 @@ cask 'limber' do
   name 'Limber'
   homepage 'https://aescripts.com/limber'
 
-  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels/'
-  latest = Dir[folder].sort { |min, max| min <=> max }[-1]
+  folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'].max
 
   plugin = 'Limber.jsxbin'
   postflight do
-    FileUtils.mv Dir["#{staged_path}/Limber_*/#{plugin}"][0], latest
+    FileUtils.mv Dir["#{staged_path}/Limber_*/#{plugin}"][0], folder
   end
 
   uninstall delete: [
-                      folder + plugin,
+                      "#{folder}/#{plugin}",
                       '~/Library/Application Support/Aescripts/Limber',
                     ],
             rmdir:  '~/Library/Application Support/Aescripts'

@@ -10,16 +10,15 @@ cask 'ray-dynamic-color' do
 
   auto_updates true
 
-  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels/'
-  latest = Dir[folder].sort { |min, max| min <=> max }[-1]
-
+  folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'].max
   plugin = 'Ray Dynamic Color.jsxbin'
+
   postflight do
-    FileUtils.mv Dir["#{staged_path}/Ray Dynamic Color_v*/#{plugin}"][0], latest + plugin
+    FileUtils.mv Dir["#{staged_path}/Ray Dynamic Color_v*/#{plugin}"][0], "#{folder}/#{plugin}"
   end
 
   uninstall delete: [
-                      folder + plugin,
+                      "#{folder}/#{plugin}",
                       '~/Library/Application Support/Aescripts/Ray',
                     ],
             rmdir:  '~/Library/Application Support/Aescripts'

@@ -7,16 +7,15 @@ cask 'joysticks-n-sliders' do
   name "Joysticks 'n Sliders"
   homepage 'https://aescripts.com/joysticks-n-sliders'
 
-  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels/'
-  latest = Dir[folder].sort { |min, max| min <=> max }[-1]
+  folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'].max
 
   plugin = 'Joysticks_n_Sliders.jsxbin'
   postflight do
-    FileUtils.mv Dir["#{staged_path}/Joysticks_n_Sliders_v*/#{plugin}"][0], latest
+    FileUtils.mv Dir["#{staged_path}/Joysticks_n_Sliders_v*/#{plugin}"][0], folder
   end
 
   uninstall delete: [
-                      folder + plugin,
+                      "#{folder}/#{plugin}",
                       '~/Library/Application Support/Aescripts/JoysticksnSliders',
                     ],
             rmdir:  '~/Library/Application Support/Aescripts'

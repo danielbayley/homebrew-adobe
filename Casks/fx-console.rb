@@ -9,17 +9,16 @@ cask 'fx-console' do
 
   container nested: "FXConsoleInstaller_#{version.before_comma}_Mac.dmg"
 
-  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects *'
-  latest = Dir[folder].sort { |min, max| min <=> max }[-1]
+  folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects *'].max
 
   plugin = 'FXConsole.plugin'
   artifact "FXConsoleInstaller.app/Contents/Resources/#{plugin}",
-           target: "#{latest}/Plug-ins/VideoCopilot/#{plugin}"
+           target: "#{folder}/Plug-ins/VideoCopilot/#{plugin}"
 
   rmdir = [
             '~/Documents/VideoCopilot',
             '/Library/Application Support/VideoCopilot',
-            "#{latest}/Plug-ins/VideoCopilot",
+            "#{folder}/Plug-ins/VideoCopilot",
           ]
 
   uninstall rmdir: rmdir

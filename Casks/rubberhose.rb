@@ -7,11 +7,10 @@ cask 'rubberhose' do
   name 'RubberHose'
   homepage 'http://battleaxe.co/rubberhose'
 
-  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'
-  latest = Dir[folder].sort { |min, max| min <=> max }[-1]
+  folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'].max
 
   artifact "RubberHose#{version}/RubberHose#{version.major}.jsxbin",
-           target: "#{latest}/RubberHose.jsxbin"
+           target: "#{folder}/RubberHose.jsxbin"
 
   zap trash: "~/Library/Application Support/BattleAxe/RubberHose #{version.major}",
       rmdir: '~/Library/Application Support/BattleAxe'

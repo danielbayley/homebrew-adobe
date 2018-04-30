@@ -7,13 +7,11 @@ cask 'randomatic' do
   name 'Randomatic'
   homepage 'https://aescripts.com/randomatic'
 
-  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'
-  latest = Dir[folder].sort { |min, max| min <=> max }[-1]
-
+  folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'].max
   plugin = 'Randomatic.jsxbin'
 
-  artifact plugin, target: "#{latest}/#{plugin}"
-  artifact 'Randomatic', target: "#{latest}/Randomatic"
+  artifact plugin, target: "#{folder}/#{plugin}"
+  artifact 'Randomatic', target: "#{folder}/Randomatic"
 
   caveats do
     free_license 'https://aescripts.com/randomatic'

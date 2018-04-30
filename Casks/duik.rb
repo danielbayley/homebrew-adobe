@@ -14,8 +14,7 @@ cask 'duik' do
   homepage 'https://rainboxprod.coop/tools/duik'
 
   panels = 'Scripts/ScriptUI Panels'
-  folder = '/Applications/Adobe Creative Cloud/Adobe After Effects */'
-  latest = Dir[folder].sort { |min, max| min <=> max }[-1]
+  folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects *'].max
   files = [
             'Duik.jsx',
             'Duik_images.jsxinc',
@@ -24,12 +23,12 @@ cask 'duik' do
           ]
 
   preflight do
-    xml = "#{latest}/#{File.basename latest}.app/Contents/Resources/PresetEffects.xml"
+    xml = "#{folder}/#{File.basename folder}.app/Contents/Resources/PresetEffects.xml"
     system "cat #{staged_path}/Duik_presetEffects.xml >> '#{xml}'" if language
   end
 
   files.push "Duik_translations_#{language}.jsxinc" if language
-  files.each { |file| artifact file, target: "#{latest}/#{panels}/#{file}" }
+  files.each { |file| artifact file, target: "#{folder}/#{panels}/#{file}" }
 
   uninstall_postflight do
     data = File.read xml
@@ -38,7 +37,7 @@ cask 'duik' do
   end
 
   uninstall delete: [
-                      "#{folder + panels}/*[Dd]uik*.jsx*",
+                      "#{folder}/#{panels}/*[Dd]uik*.jsx*",
                       '~/Library/Application Support/Duduf/DuIK',
                     ]
 
