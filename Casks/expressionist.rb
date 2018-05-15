@@ -11,13 +11,13 @@ cask 'expressionist' do
   depends_on formula: 'exmancmd'
 
   postflight do
-    zxp = Dir["#{staged_path}/Expressionist */Mac/Expressionist-*.zxp"][0]
+    zxp = Dir["#{staged_path}/expressionist*/Expressionist*.zxp"][0]
     system_command "#{HOMEBREW_PREFIX}/bin/exmancmd", args: ['--install', zxp]
   end
 
   uninstall script: {
                       executable: "#{HOMEBREW_PREFIX}/bin/exmancmd",
-                      args:       ['--remove', 'Expressionist'],
+                      args:       ['--remove', 'com.aescripts.expressionist'],
                     }
 
   zap delete: '~/Library/Preferences/com.aescripts.Expressionist.lic'
