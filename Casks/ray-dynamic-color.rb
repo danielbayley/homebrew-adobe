@@ -17,11 +17,11 @@ cask 'ray-dynamic-color' do
     FileUtils.mv Dir["#{staged_path}/Ray Dynamic Color_v*/#{plugin}"][0], "#{folder}/#{plugin}"
   end
 
-  uninstall delete: [
-                      "#{folder}/#{plugin}",
-                      '~/Library/Application Support/Aescripts/Ray',
-                    ],
-            rmdir:  '~/Library/Application Support/Aescripts'
+  support = '~/Library/Application Support'
+  uninstall delete: ["#{folder}/#{plugin}", "#{support}/Aescripts/Ray"],
+            rmdir:  "#{support}/Aescripts"
+
+  zap trash: "#{support}/com.aescripts.SVDRDC*.lic"
 
   caveats "A license can be purchased at https://aescripts.com/#{token}."
 end
