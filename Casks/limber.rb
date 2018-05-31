@@ -7,6 +7,8 @@ cask 'limber' do
   name 'Limber'
   homepage 'https://aescripts.com/limber'
 
+  auto_updates true
+
   folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'].max
 
   plugin = 'Limber.jsxbin'
@@ -14,11 +16,11 @@ cask 'limber' do
     FileUtils.mv Dir["#{staged_path}/Limber_*/#{plugin}"][0], folder
   end
 
-  uninstall delete: [
-                      "#{folder}/#{plugin}",
-                      '~/Library/Application Support/Aescripts/Limber',
-                    ],
-            rmdir:  '~/Library/Application Support/Aescripts'
+  support = '~/Library/Application Support'
+  uninstall delete: ["#{folder}/#{plugin}", "#{support}/Aescripts/Limber"],
+            rmdir:  "#{support}/Aescripts"
 
-  caveats "A license can be purchased at https://aescripts.com/#{token}."
+  zap delete: "#{support}/com.aescripts.SKL.lic"
+
+  caveats "A license can be purchased at #{homepage}."
 end
