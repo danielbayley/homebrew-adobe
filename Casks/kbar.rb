@@ -19,5 +19,7 @@ cask 'kbar' do
                       args:       ['--remove', 'KBar'],
                     }
 
-  caveats "A license can be purchased at https://aescripts.com/#{token}."
+  zap trash: '~/Library/Application Support/com.aescripts.KBar.lic'
+
+  caveats "A license can be purchased at #{homepage}."
 end
