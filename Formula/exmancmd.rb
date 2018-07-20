@@ -1,9 +1,9 @@
 class Exmancmd < Formula
   desc "Install add-ons and extensions for Adobe apps"
   homepage "https://www.adobeexchange.com/resources/28"
-  url "https://www.adobe.com/go/ExManCmdMac"
-  version "7.3.4.597"
-  sha256 "4a8d0740ba49365391ed7e31ccf6dee9d918b99e86720cf74770f93cd2b094ac"
+  url "https://adobe.com/go/ExManCmdMac"
+  version "7.4.0.88"
+  sha256 "6a20d9a4ad606a0f8e481db80ee5c37da367e2d31f4ebff2a1bc283bec36deec"
 
   bottle :unneeded
 
