@@ -25,7 +25,7 @@ License
 [MIT]:                    LICENSE.md
 [Daniel Bayley]:          https://github.com/danielbayley
 
-[ci]:                     https://img.shields.io/circleci/project/danielbayley/homebrew-adobe.svg?style=flat-square
+[ci]:                     https://flat.badgen.net/circleci/github/danielbayley/homebrew-adobe?label=&icon=circleci
 [circle]:                 https://circleci.com/gh/danielbayley/homebrew-adobe
 
 [adobe]:                  https://adobe.com
