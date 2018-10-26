@@ -1,6 +1,6 @@
 cask 'rubberhose' do
-  version '2.08'
-  sha256 '2a574e1cc347d64afbcb1fe76dd0aa21290b9f6ca72bb13050c6fd50218bae2e'
+  version '2.09'
+  sha256 '0a06703e705b9b70a148742b39559440bcb247c5e63965136c8f83931a8ef83e'
 
   # dropbox.com/s was verified as official when first introduced to the cask
   url "https://dropbox.com/s/#{ENV['HOMEBREW_ADOBE_RUBBERHOSE']}/RubberHose#{version}.zip?dl=1"
