@@ -4,7 +4,7 @@ cask 'hose-maker' do
 
   url "https://battleaxe.co/s/Hose-Maker_#{version}.zip"
   name 'Hose Maker'
-  homepage 'http://battleaxe.co/rh2-addons'
+  homepage 'https://battleaxe.co/rh2-addons'
 
   depends_on cask: 'rubberhose'
 

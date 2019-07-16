@@ -5,7 +5,7 @@ cask 'overlord' do
   # dropbox.com/s was verified as official when first introduced to the cask
   url "https://dropbox.com/s/#{ENV['HOMEBREW_ADOBE_OVERLORD']}/Overlord-#{version}.zip?dl=1"
   name 'Overlord'
-  homepage 'http://battleaxe.co/overlord'
+  homepage 'https://battleaxe.co/overlord'
 
   # auto_updates true
   depends_on formula: 'exmancmd'

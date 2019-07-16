@@ -36,7 +36,7 @@ cask 'extendscript-toolkit-cc' do
 
   url "http://prdl-download.adobe.com/ExtendScriptToolkit/85C17E5FC8B34A7B8483796F0367F97C/1509443413689/AdobeExtendScriptToolkit_#{version.major}_LS22.dmg"
   name 'Adobe ExtendScript Toolkit CC'
-  homepage 'https://adobe.com/products/estk'
+  homepage 'https://helpx.adobe.com/download-install/kb/creative-cloud-apps-download.html'
 
   media_signature = '135274B3-69EE-4AE8-ACCE-1718A1EBC8CC'
 

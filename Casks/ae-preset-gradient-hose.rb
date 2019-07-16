@@ -4,7 +4,7 @@ cask 'ae-preset-gradient-hose' do
 
   url 'http://battleaxe.co/s/GradientHose_Style.zip'
   name 'Gradient Hose'
-  homepage 'http://battleaxe.co/rh2-addons#gradient-hose'
+  homepage 'https://battleaxe.co/rh2-addons#gradient-hose'
 
   depends_on cask: 'rubberhose'
 

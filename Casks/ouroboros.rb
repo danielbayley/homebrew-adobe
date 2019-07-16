@@ -5,7 +5,7 @@ cask 'ouroboros' do
   # dropbox.com/s/9uv7vu4amz80eek was verified as official when first introduced to the cask
   url "https://dropbox.com/s/9uv7vu4amz80eek/ouroboros_#{version}.zip?dl=1"
   name 'Ouroboros'
-  homepage 'http://georegulus.com/'
+  homepage 'https://georegulus.com/tools'
 
   folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'].max
 

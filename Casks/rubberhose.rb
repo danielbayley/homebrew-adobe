@@ -5,7 +5,7 @@ cask 'rubberhose' do
   # dropbox.com/s was verified as official when first introduced to the cask
   url "https://dropbox.com/s/#{ENV['HOMEBREW_ADOBE_RUBBERHOSE']}/RubberHose#{version}.zip?dl=1"
   name 'RubberHose'
-  homepage 'http://battleaxe.co/rubberhose'
+  homepage 'https://battleaxe.co/rubberhose'
 
   folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'].max
 

@@ -5,7 +5,7 @@ cask 'buttcapper' do
   # dropbox.com/s/mgsiyaaz4ncnpu9 was verified as official when first introduced to the cask
   url "https://dropbox.com/s/mgsiyaaz4ncnpu9/ButtCapper_v#{version}.zip?dl=1"
   name 'ButtCapper'
-  homepage 'http://battleaxe.co/buttcapper'
+  homepage 'https://battleaxe.co/buttcapper'
 
   folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts'].max
   plugin = 'ScriptUI Panels/ButtCapper.jsxbin'

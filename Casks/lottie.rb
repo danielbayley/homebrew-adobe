@@ -5,7 +5,7 @@ cask 'lottie' do
   # github.com/airbnb/lottie-web was verified as official when first introduced to the cask
   url "https://github.com/airbnb/lottie-web/archive/v#{version}.zip"
   name 'Lottie'
-  homepage 'http://airbnb.io/lottie'
+  homepage 'https://airbnb.io/lottie'
 
   depends_on formula: 'exmancmd'
 
