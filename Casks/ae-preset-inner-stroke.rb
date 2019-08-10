@@ -3,7 +3,7 @@ cask 'ae-preset-inner-stroke' do
   sha256 :no_check
 
   preset = 'zl_InnerStroke.ffx'
-  url "http://zacklovatt.com/presets/#{preset}"
+  url "https://zacklovatt.com/presets/#{preset}"
   name 'Inner Stroke'
   homepage 'https://zacklovatt.com/preset-shape-layer-inner-stroke'
 
