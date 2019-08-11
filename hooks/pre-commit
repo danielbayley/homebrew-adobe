@@ -16,6 +16,7 @@ do case $rb in
     brew cask style $rb
     unset download
     [[ $rb != *-cc* ]] && download=${CI+download}
+    if (brew cask _stanza url $rb | grep -q aescripts.com) unset download
     brew cask audit $rb --$download;;
 esac
 done
