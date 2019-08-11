@@ -7,7 +7,7 @@ cask 'lottie' do
   name 'Lottie'
   homepage 'https://airbnb.io/lottie'
 
-  depends_on formula: 'exmancmd'
+  depends_on cask: 'exmancmd'
 
   installer script: {
                       executable: "#{HOMEBREW_PREFIX}/bin/exmancmd",

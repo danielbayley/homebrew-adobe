@@ -8,7 +8,7 @@ cask 'ae-flow' do
   name 'Flow'
   homepage 'https://zacklovatt.com/tools/flow'
 
-  depends_on formula: 'exmancmd'
+  depends_on cask: 'exmancmd'
 
   postflight do
     zxp = Dir["#{staged_path}/flow-v*/Flow v*/Flow.zxp"].max

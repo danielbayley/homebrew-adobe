@@ -7,7 +7,7 @@ cask 'boombox' do
   homepage 'https://mtmograph.com/boombox'
 
   auto_updates true
-  depends_on formula: 'exmancmd'
+  depends_on cask: 'exmancmd'
 
   installer script: { # pkg "boombox-#{version}-mac/Boombox Installer.pkg"
                       executable: "#{HOMEBREW_PREFIX}/bin/exmancmd",

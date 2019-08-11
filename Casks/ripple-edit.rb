@@ -8,7 +8,7 @@ cask 'ripple-edit' do
   name 'Ripple Edit'
   homepage 'https://plugineverything.com/ripple-edit'
 
-  depends_on formula: 'exmancmd'
+  depends_on cask: 'exmancmd'
 
   postflight do
     zxp = Dir["#{staged_path}/Ripple Edit v*/Ripple Edit.zxp"].max

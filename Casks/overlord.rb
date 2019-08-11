@@ -7,7 +7,7 @@ cask 'overlord' do
   name 'Overlord'
   homepage 'https://battleaxe.co/overlord'
 
-  depends_on formula: 'exmancmd'
+  depends_on cask: 'exmancmd'
 
   installer script: {
                       executable: "#{HOMEBREW_PREFIX}/bin/exmancmd",

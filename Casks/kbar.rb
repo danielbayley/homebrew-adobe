@@ -7,7 +7,7 @@ cask 'kbar' do
   name 'KBar'
   homepage 'https://aescripts.com/kbar'
 
-  depends_on formula: 'exmancmd'
+  depends_on cask: 'exmancmd'
 
   postflight do
     zxp = Dir["#{staged_path}/kbar-*.zxp"][0]

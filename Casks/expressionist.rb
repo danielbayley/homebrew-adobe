@@ -8,7 +8,7 @@ cask 'expressionist' do
   name 'Expressionist'
   homepage "http://klustre.nl/#{token}"
 
-  depends_on formula: 'exmancmd'
+  depends_on cask: 'exmancmd'
 
   postflight do
     zxp = Dir["#{staged_path}/expressionist*/Expressionist*.zxp"][0]
