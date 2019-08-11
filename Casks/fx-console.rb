@@ -3,7 +3,7 @@ cask 'fx-console' do
   sha256 'c2cccfb619b57611498116512e3a8a07d86cfb135756f6424d30f55babf4dbc3'
 
   # vcproducts.s3.amazonaws.com was verified as official when first introduced to the cask
-  url "http://vcproducts.s3.amazonaws.com/free/fxconsole/FXConsoleInstaller_#{version.before_comma}_Mac_#{version.after_comma}.zip"
+  url "https://vcproducts.s3.amazonaws.com/free/fxconsole/FXConsoleInstaller_#{version.before_comma}_Mac_#{version.after_comma}.zip"
   name 'FX Console'
   homepage 'https://videocopilot.net/blog/?s=fx+console'
 
