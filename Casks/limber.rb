@@ -7,8 +7,6 @@ cask 'limber' do
   name 'Limber'
   homepage 'https://aescripts.com/limber'
 
-  auto_updates true
-
   folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'].max
 
   plugin = 'Limber.jsxbin'

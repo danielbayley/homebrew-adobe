@@ -8,7 +8,6 @@ cask 'expressionist' do
   name 'Expressionist'
   homepage "http://klustre.nl/#{token}"
 
-  auto_updates true
   depends_on formula: 'exmancmd'
 
   postflight do

@@ -8,8 +8,6 @@ cask 'ray-dynamic-color' do
   name 'Ray Dynamic Color'
   homepage 'https://georegulus.com/tools'
 
-  auto_updates true
-
   folder = Dir['/Applications/Adobe Creative Cloud/Adobe After Effects */Scripts/ScriptUI Panels'].max
   plugin = 'Ray Dynamic Color.jsxbin'
 
