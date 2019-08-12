@@ -7,16 +7,16 @@ elif ${CI-false}
 then ls */*.rb
 else git diff --cached --name-only --diff-filter=ACM | grep .rb$
 fi | while read rb
-do case $rb in
-  Formula*)
-    brew audit --strict --online $rb
-    brew install $rb
-    brew test $rb;;
-  Cask*)
-    brew cask style $rb
-    unset download
-    [[ $rb != *-cc* ]] && download=${CI+download}
-    if (brew cask _stanza url $rb | grep -q aescripts.com) unset download
-    brew cask audit $rb --$download;;
-esac
+do brew cask _stanza url $rb | read
+  case ${${REPLY:#*aescripts.com*}:+$rb} in
+    Formula*)
+      brew audit --strict --online $rb
+      brew install $rb
+      exec brew test $rb;;
+
+    *-cc*|'') unset download;;
+    Cask*) download=${CI+download}
+  esac
+  brew cask style $rb
+  brew cask audit $rb --$download
 done
