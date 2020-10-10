@@ -1,5 +1,3 @@
-[![badge][ci]][circle]
-
 _[Homebrew]_ Adobe
 ==================
 Homebrew _[tap]_ for [Adobe] apps, and even [plugins]!
@@ -16,7 +14,7 @@ brew install #formula
 
 [Contribute][guide]
 -------------------
-`git config core.hooksPath hooks` and follow the contribution [guide], or copy and adapt an [existing] cask.
+`git config core.hooksPath .github/hooks` and follow the contribution [guide], or copy and adapt an [existing] Cask or _[formula]_.
 
 License
 -------
@@ -24,9 +22,6 @@ License
 
 [MIT]:                    LICENSE.md
 [Daniel Bayley]:          https://github.com/danielbayley
-
-[ci]:                     https://flat.badgen.net/circleci/github/danielbayley/homebrew-adobe?label=&icon=circleci
-[circle]:                 https://circleci.com/gh/danielbayley/homebrew-adobe
 
 [adobe]:                  https://adobe.com
 [plugins]:                https://exchange.adobe.com/addons
