@@ -31,6 +31,8 @@ cask "adobe-illustrator-scripts-hiroyuki-sato" do
 
   staged_path.glob("#{subpath}/{*,*/*/*}.jsx").each do |path|
     target = scripts/author/path.basename
+    next if path.to_s.include? "_oldUI"
+
     artifact path, target: target unless target.exist?
   end
 
