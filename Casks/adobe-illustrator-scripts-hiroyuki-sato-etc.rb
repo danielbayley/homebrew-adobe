@@ -33,7 +33,11 @@ cask "adobe-illustrator-scripts-hiroyuki-sato-etc" do
   subpath = "#{owner}-#{repo}-#{version.after_comma}"
 
   staged_path.glob("#{subpath}/{*,*/*}.jsx").each do |path|
-    target = scripts/author/path.basename
+    target = scripts/author/path.basename.to_s
+                                .split(/(?<=[a-z])(?=[A-Z])/)
+                                .map(&:capitalize)
+                                .join(" ")
+
     artifact path, target: target unless target.exist?
   end
 
