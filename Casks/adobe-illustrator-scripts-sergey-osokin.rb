@@ -44,7 +44,7 @@ cask "adobe-illustrator-scripts-sergey-osokin" do
   end
 
   caveats do
-    caskroom = caskroom_path/version/subpath
+    caskroom = staged_path/subpath
     license caskroom/"LICENSE"
 
     docs = caskroom.glob("md/*#{language}.md").reduce("") do |text, path|
