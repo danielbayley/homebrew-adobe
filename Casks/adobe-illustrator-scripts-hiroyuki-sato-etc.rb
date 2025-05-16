@@ -12,8 +12,8 @@ cask "adobe-illustrator-scripts-hiroyuki-sato-etc" do
 
   url "https://#{repository}/tarball/#{branch}"
   name tokens[1..2].map(&:capitalize).join " "
-  desc "JavaScript scripts for #{app} CSx"
-  homepage "https://#{repository}/#readme"
+  desc "JavaScript #{tokens.third} for #{app} CSx"
+  homepage "https://#{repository}#readme"
 
   livecheck do
     url "https://#{repository}/commits"
@@ -44,7 +44,7 @@ cask "adobe-illustrator-scripts-hiroyuki-sato-etc" do
   uninstall rmdir: scripts/author
 
   caveats do
-    caskroom = caskroom_path/version/subpath
+    caskroom = staged_path/subpath
     license caskroom/"LICENSE.txt"
     <<~EOS
       Read the manuals at:

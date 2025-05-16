@@ -39,7 +39,7 @@ cask "adobe-illustrator-scripts-hiroyuki-sato" do
   uninstall rmdir: scripts/author
 
   caveats do
-    doc = caskroom_path/version/subpath/"doc"
+    doc = staged_path/subpath/"doc"
     license doc/"LICENSE.txt"
     <<~EOS
       Read the manual at:
