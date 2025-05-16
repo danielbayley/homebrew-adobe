@@ -41,6 +41,17 @@ cask "adobe-illustrator-scripts-hiroyuki-sato-etc" do
     artifact path, target: target unless target.exist?
   end
 
+  uninstall_preflight do
+    receipt = caskroom_path/".metadata/INSTALL_RECEIPT.json"
+    json = JSON.load_file receipt, symbolize_names: true if receipt.exist?
+    next if json.nil?
+
+    json[:uninstall_artifacts].compact.map do |uninstall|
+      path = uninstall[:artifact]&.last&.dig :target
+      system_command "/bin/rm", args: [path], sudo: true unless path.nil?
+    end
+  end
+
   uninstall rmdir: scripts/author
 
   caveats do
